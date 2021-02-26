@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sammani Cakes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+    <script type="text/javascript">
+        function displayNextImage() {
+            x = (x === images.length - 1) ? 0 : x + 1;
+            document.getElementById("cover_img").src = images[x];
+        }
+
+        function displayPreviousImage() {
+            x = (x <= 0) ? images.length - 1 : x - 1;
+            document.getElementById("cover_img").src = images[x];
+        }
+
+        function startTimer() {
+            setInterval(displayNextImage, 3000);
+        }
+
+        var images = [], x = -1;
+        images[0] = "static/img/image_c_02.jpg";
+        images[1] = "static/img/image_c_03.jpg";
+        images[2] = "static/img/image_c_04.jpg";
+        images[3] = "static/img/image_c_01.jpg";
+    </script>
+</head>
+<body onload="startTimer()">
+    <ul>
+        <li><a href="#shop">Online Shop</a></li>
+        <li><a href="new.html">New Arrivals</a></li>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li style="float: right;"><a href="about.html">About</a></li>
+    </ul>
+    <img id="cover_img" class="cover_img" src="static/img/image_c_01.jpg" alt="Cover Photo">
+    <h1>Bakes By Sammani</h1>
+    <a name="shop"></a> 
+</body>
+</html>
